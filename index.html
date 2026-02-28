@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!doctype html>
 <html lang="es">
 <head>
@@ -6,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>vinps | Vínculo y psicología</title>
 
-  <!-- Tailwind (layout/responsive/spacing) -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-  <!-- Fonts: brand only required (Lexend Giga 600) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
@@ -23,99 +21,201 @@
 <body class="page">
   <main class="min-h-screen flex flex-col" aria-label="vinps landing">
 
-    <!-- NAV band (dark / translucent) 
-    <header class="band band--nav" aria-label="Navegación editorial">
-      <div class="container">
-        <div class="navInner">
-          <p class="meta">vinps | Iniciativa para fortalecer el vínculo terapéutico</p>
-          <p class="meta">Etapa piloto / 2026</p>
-        </div>
-      </div>
-    </header>
-    -->
-    <!-- HERO band (diptych) -->
     <section class="band band--hero flex-1" aria-label="Hero">
-  <div class="heroFrame grid grid-cols-1 md:grid-cols-2">
-    <!-- Left panel (paper) -->
-    <section class="heroPanel heroPanel--left">
-      <div class="brandCenter">
-        <h1 class="wordmark" aria-label="vinps">
-          <span class="wordmark__vin">vin</span><span class="wordmark__ps">ps</span>
-        </h1>
+      <div class="heroFrame grid grid-cols-1 md:grid-cols-2">
+        
+        <section class="heroPanel heroPanel--left">
+          <div class="brandCenter">
+            <h1 class="wordmark" aria-label="vinps">
+              <span class="wordmark__vin">vin</span><span class="wordmark__ps">ps</span>
+            </h1>
+            <div class="brandDivider" aria-hidden="true"></div>
+            <p class="slogan">Vínculo y psicología</p>
+          </div>
+        </section>
 
-        <div class="brandDivider" aria-hidden="true"></div>
+        <section class="heroPanel heroPanel--right" aria-label="Convocatoria">
+          <div class="calloutWrap">
+            <h2 class="calloutTitle">
+              Cuidar el <br>
+              <span class="calloutAccent">vínculo</span> desde <br>
+              el inicio.
+            </h2>
+            <p class="calloutCopy">
+              Invitamos a profesionales de la psicología con práctica activa a participar en una etapa piloto, en la que se facilitará el contacto con consultantes reales buscando favorecer una mayor afinidad en el primer encuentro.
+            </p>
+            <a class="ctaDark" href="#apply">Postular al piloto</a>
+          </div>
+        </section>
 
-        <p class="slogan">Vínculo y psicología</p>
       </div>
     </section>
 
-    <!-- Right panel (ink) -->
-    <section class="heroPanel heroPanel--right" aria-label="Convocatoria">
-      <div class="calloutWrap">
-        <h2 class="calloutTitle">
-          Cuidar el <br>
-          <span class="calloutAccent">vínculo</span> desde <br>
-          el inicio.
-        </h2>
+    <section class="band band--statement" aria-label="Fundamento clínico">
+      <div class="container">
+        <article class="editorial-block">
+          
+          <header class="editorial-block__head">
+            <h2 class="editorial-block__title">
+              <span class="accent-num">01.</span> Fundamento
+            </h2>
+            <p class="editorial-block__subtitle">
+              El vínculo inicial como eje del proceso.
+            </p>
+          </header>
 
-        <p class="calloutCopy">
-          Invitamos a psicólogos y psicólogas con práctica activa a participar en una etapa piloto sin costo ni compromiso, en la que se facilitará el contacto con consultantes reales, favoreciendo una mayor afinidad en el primer encuentro.
-        </p>
+          <div class="editorial-block__body">
+  <div class="editorial-block__body">
+  <p class="editorial-block__p">
+    El inicio de un proceso terapéutico tiene un <em>peso estructural</em> en la configuración del trabajo clínico. Sin embargo, muchas personas que requieren apoyo no logran dar el primer paso por incertidumbre o falta de orientación. Nuestra iniciativa nace para acoger esa etapa previa, brindando una instancia de clarificación que facilite la decisión de comenzar y cuide el acceso a la salud mental.
+  </p>
+  <p class="editorial-block__p">
+    Buscamos que el consultante reciba un primer apoyo que le permita decidirse con seguridad, para luego vincularlo a través de una vía de derivación basada en la <strong>afinidad en el vínculo</strong>. Al propiciar esta sintonía inicial, no solo buscamos facilitar el encuentro, sino favorecer procesos más estables y consistentes, contribuyendo así tanto al ejercicio profesional como al bienestar de la sociedad.
+  </p>
+</div>
 
-        <a class="ctaDark" href="#apply">Postular ahora</a>
+        </article>
       </div>
     </section>
-  </div>
-</section>
 
+    <section class="band band--proposal" aria-label="Dinámica del piloto">
+      <div class="container">
+        <article class="editorial-block">
+          
+          <header class="editorial-block__head">
+            <h2 class="editorial-block__title">
+              <span class="accent-num">02.</span> Operativa
+            </h2>
+            <p class="editorial-block__subtitle">
+              Dinámica de la etapa piloto y colaboración profesional.
+            </p>
+          </header>
 
-<!-- STATEMENT band (intro) -->
-<section class="band band--statement" aria-label="Introducción">
+          <div class="editorial-block__body">
+            <p class="editorial-block__p">
+              En esta fase, vinps funciona como una instancia de contacto directo: facilitamos el acercamiento inicial y entregamos la información preliminar del caso. Una vez realizada esta derivación, nuestra participación en la esfera clínica concluye, asegurando que el encuadre, las metodologías y la gestión posterior queden bajo la total autonomía del profesional.
+            </p>
+            <p class="editorial-block__p">
+              Sin embargo, como parte de este piloto, contemplamos instancias posteriores de <strong>retroalimentación</strong> para evaluar la pertinencia del encuentro. Nos interesa mantener un diálogo con los participantes y con quienes se han inscrito, consolidando una red profesional interesada en cuidar la calidad del inicio terapéutico.
+            </p>
+            <p class="editorial-block__p">
+              La postulación es, ante todo, una declaración de interés en esta visión de la práctica clínica. Si bien no podemos asegurar una participación inmediata debido a la naturaleza acotada de esta etapa, este registro nos permite mantener un canal abierto para invitar a nuevos profesionales a medida que la iniciativa logre ampliar su alcance y capacidad de gestión.
+            </p>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <section class="band band--flow" aria-label="El camino hacia el encuentro">
+      <div class="container">
+        <article class="editorial-block">
+          
+          <header class="editorial-block__head">
+            <h2 class="editorial-block__title">
+              <span class="accent-num">03.</span> El Proceso
+            </h2>
+            <p class="editorial-block__subtitle">
+              El camino hacia el encuentro clínico.
+            </p>
+          </header>
+
+          <div class="editorial-block__body">
+            <ol class="flow-list" role="list">
+              
+              <li class="flow-step">
+                <span class="flow-step__num">Paso 01</span>
+                <h3 class="flow-step__title">Acogida y orientación</h3>
+                <p class="editorial-block__p">
+                  Recibimos a personas que necesitan apoyo pero que, por temor o desconocimiento, aún no inician su proceso. Les brindamos un espacio de orientación inicial para ayudarles a dar el paso con seguridad.
+                </p>
+              </li>
+              
+              <li class="flow-step">
+                <span class="flow-step__num">Paso 02</span>
+                <h3 class="flow-step__title">Búsqueda de pertinencia</h3>
+                <p class="editorial-block__p">
+                  A partir de la situación singular de cada persona, analizamos qué práctica profesional y qué encuadre se alinean mejor con sus necesidades. No buscamos un contacto masivo, sino uno con sentido clínico y humano.
+                </p>
+              </li>
+              
+              <li class="flow-step">
+                <span class="flow-step__num">Paso 03</span>
+                <h3 class="flow-step__title">Facilitación del vínculo</h3>
+                <p class="editorial-block__p">
+                  Entregamos al profesional la información necesaria para que el primer encuentro ocurra sobre una base de entendimiento mutuo. Al asegurar esta afinidad desde el origen, favorecemos que el proceso perdure en el tiempo.
+                </p>
+              </li>
+
+            </ol>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <section class="band band--team" aria-label="Nuestro propósito">
+      <div class="container">
+        <article class="editorial-block">
+          
+          <header class="editorial-block__head">
+            <h2 class="editorial-block__title">
+              <span class="accent-num">04.</span> El Equipo
+            </h2>
+            <p class="editorial-block__subtitle">
+              Un propósito multidisciplinario.
+            </p>
+          </header>
+
+          <div class="editorial-block__body">
+            <p class="editorial-block__p">
+              <strong>Nuestra intención es el fortalecimiento de la disciplina.</strong>
+            </p>
+            <p class="editorial-block__p">
+              Somos un equipo donde convergen la psicología, la ingeniería y la investigación. Nos unimos bajo una observación común: la dificultad de muchas personas para iniciar un proceso y la fragilidad de los vínculos terapéuticos en sus primeras etapas.
+            </p>
+            <p class="editorial-block__p">
+              Creemos que la salud mental de la sociedad se fortalece cuando cuidamos la práctica de quienes la sostienen. Por eso, nuestro trabajo no es la intervención clínica, sino la creación de una infraestructura humana y responsable que ayude a que más personas se atrevan a consultar y, sobre todo, que encuentren en su profesional un lazo estable donde permanecer.
+            </p>
+            <p class="editorial-block__p">
+              vinps es nuestro gesto de apoyo al desarrollo de la psicología y al bienestar común.
+            </p>
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <section class="band band--outro" id="apply" aria-label="Cierre y postulación">
   <div class="container">
-    <article class="statement" aria-labelledby="statement-title">
-
-      <header class="statement__head">
-        <h2 class="statement__title" id="statement-title">
-          El valor de un buen comienzo
-        </h2>
-      </header>
-
-      <div class="statement__body">
-        <p class="statement__lead">
-          En la práctica clínica, el inicio del proceso terapéutico tiene un peso particular. La sintonía inicial entre profesional y consultante puede influir en el encuadre y en la continuidad del trabajo.
-        </p>
-
-        <p class="statement__close">
-          Buscamos cuidar ese primer contacto, facilitando conexiones más afinadas desde el comienzo.
+    <div class="outro-wrapper">
+      
+      <div class="outro__content">
+        <p class="outro__location">Desde Santiago, Chile</p>
+        <h2 class="outro__title">Sé parte de esta iniciativa.</h2>
+        <p class="outro__description">
+          Únete a nuestra etapa piloto y ayúdanos a construir una mejor infraestructura para el inicio del proceso clínico.
         </p>
       </div>
+      
+      <div class="outro__action">
+        <a class="ctaSolid" href="URL_DEL_FORMULARIO" target="_blank" rel="noopener">Postular al piloto</a>
+        <p class="outro__note">Tus datos se utilizarán exclusivamente para los fines de esta convocatoria.</p>
+      </div>
 
-    </article>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- FOOTER band -->
- <footer class="band band--footer" aria-label="Contacto">
-  <div class="container">
-    <div class="footer">
-      <a href="mailto:info@vinps.cl" class="footer__email">
-        info@vinps.cl
-      </a>
     </div>
   </div>
-</footer>
+</section>
+
+    <footer class="band band--footer" aria-label="Contacto">
+      <div class="container">
+        <div class="footer">
+          <a href="mailto:info@vinps.cl" class="footer__email">
+            info@vinps.cl
+          </a>
+        </div>
+      </div>
+    </footer>
 
   </main>
 </body>

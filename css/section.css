@@ -1,258 +1,339 @@
 /* ==========================================
-   STATEMENT — Academic Frame (tight)
-   - Frame hugs the title (structured, not empty)
-   - Title color slightly stronger (token-based, not black)
-   - No section borders; separation only by background
+   EDITORIAL BLOCKS — vinps
+   Contiene: Statement, Proposal, Flow, Team y Outro
+   Estilo: Técnico, preciso, jerarquía clara y amable.
    ========================================== */
 
-.band--statement{
-  background: var(--paper-2);
+/* =========================
+   1. CONTROL DE FONDOS (Ritmo de lectura)
+   ========================= */
+
+.band--statement {
+  background: var(--paper-2); /* Blanco puro */
   overflow: clip;
 }
 
-.statement{
-  padding: clamp(2.9rem, 6.5vw, 6rem) 0;
+.band--proposal {
+  background: var(--paper); /* Gris suave */
+  border-top: 1px solid rgba(12, 12, 12, 0.03);
+  overflow: clip;
+}
+
+.band--flow {
+  background: var(--paper-2); /* Vuelve a blanco */
+  border-top: 1px solid rgba(12, 12, 12, 0.03);
+  overflow: clip;
+}
+
+.band--team {
+  background: var(--paper); /* Gris suave antes del final */
+  border-top: 1px solid rgba(12, 12, 12, 0.03);
+  overflow: clip;
+}
+
+/* =========================
+   2. RETÍCULA MAESTRA (Layout General)
+   ========================= */
+
+.editorial-block {
+  padding: clamp(4rem, 8vw, 7rem) 0;
   display: grid;
-  gap: clamp(1.25rem, 2.6vw, 2rem);
   min-width: 0;
-}
-
-/* Desktop: two columns + vertical alignment + breathing */
-@media (min-width: 768px){
-  .statement{
-    grid-template-columns: 0.9fr 1.4fr;
-    column-gap: clamp(2.5rem, 4.8vw, 5.75rem);
-    align-items: center;
-
-    padding-left: clamp(0.5rem, 1.4vw, 1.1rem);
-    padding-right: clamp(0.5rem, 1.4vw, 1.1rem);
-  }
-}
-
-/* Mobile: centered + breathing */
-@media (max-width: 767px){
-  .statement{
-    text-align: center;
-    padding-left: clamp(1rem, 3vw, 1.25rem);
-    padding-right: clamp(1rem, 3vw, 1.25rem);
-  }
-
-  .statement__head,
-  .statement__body{
-    margin-inline: auto;
-    max-width: 62ch;
-  }
 }
 
 /* =========================
-   Head: tight frame that fits content
+   3. CABECERAS (Jerarquía amable y sutil)
    ========================= */
 
-.statement__head{
+.editorial-block__head {
   min-width: 0;
-}
-
-/* The framed title block (hug content) */
-.statement__title{
-  display: inline-block; /* ✅ frame hugs the title */
+  display: flex;
+  flex-direction: column;
   position: relative;
+}
 
-  padding: 0.95rem 1.05rem;
+/* Título Principal (Amable, sin gritar) */
+.editorial-block__title {
   margin: 0;
+  font-family: var(--font-ui); /* Fuente limpia de interfaz */
+  font-size: clamp(20px, 2.2vw, 26px); /* Tamaño controlado */
+  font-weight: 500; /* Peso medio */
+  letter-spacing: -0.01em;
+  color: var(--text);
+  line-height: 1.2;
+}
 
-  font-family: var(--font-slogan); /* same family as slogan */
-  font-style: normal;              /* not italic */
+/* La numeración con el color de acento */
+.accent-num {
+  color: var(--pink);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-right: 0.2em;
+}
+
+/* El Subtítulo / Bajada */
+.editorial-block__subtitle {
+  margin: 0.85rem 0 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-style: italic;
   font-weight: 400;
-
-  font-size: clamp(18px, 1.35vw, 24px);
-  line-height: 1.25;
-  letter-spacing: 0.01em;
-
-  /* ✅ slightly more visible than brand-slogan, not black */
   color: var(--text-muted);
-}
-
-/* Fine pink frame */
-.statement__title::before{
-  content:"";
-  position:absolute;
-  inset: 0;
-  border: 1px solid var(--pink);
-  opacity: 0.45;
-  pointer-events:none;
-  border-radius: 0px; /* subtle refinement, not “cardy” */
-}
-
-/* Add a small internal structure: micro-notch */
-.statement__title::after{
-  content:"";
-  position:absolute;
-  left: 0.7rem;
-  top: -1px;
-  width: 28px;
-  height: 1px;
-  background: var(--paper-2); /* creates a tiny “break” in the frame */
-  pointer-events:none;
-  opacity: 1;
-}
-
-/* Mobile: keep it tight and centered */
-@media (max-width: 520px){
-  .statement__title{
-    padding: 0.9rem 0.95rem;
-    font-size: 18px;
-  }
+  line-height: 1.35;
+  text-wrap: balance;
+  max-width: 28ch;
 }
 
 /* =========================
-   Body
+   4. CUERPO DE TEXTO
    ========================= */
 
-.statement__body{
-  max-width: 78ch;
+.editorial-block__body {
   min-width: 0;
+  max-width: 68ch;
 }
 
-.statement__lead{
-  font-size: var(--fs-body);
-  line-height: 1.95;
-  font-weight: 360;
-  color: var(--text-muted);
-}
-
-.statement__close{
-  margin-top: 1.25rem;
+.editorial-block__p {
+  margin: 0;
+  font-family: var(--font-ui);
   font-size: var(--fs-body);
   line-height: 1.85;
-  font-weight: 430;
+  font-weight: 350;
+  color: var(--text-muted);
+  -webkit-font-smoothing: antialiased;
+}
+
+.editorial-block__p + .editorial-block__p {
+  margin-top: 1.35rem;
+}
+
+.editorial-block__p strong {
+  font-weight: 600;
   color: var(--text);
 }
 
+/* =========================
+   5. COMPONENTE: TIMELINE (El Proceso)
+   ========================= */
 
-/* ==========================================
-   PROPUESTA SECTION
-   
-   PROPOSAL — band (paper surface)
-   Separation by background only (no borders)
-   ========================================== */
+.flow-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 1px solid var(--pink-35);
+  margin-left: 0.5rem;
+}
 
-.band--proposal{
-  background: var(--paper);
+.flow-step {
+  position: relative;
+  padding-left: clamp(1.5rem, 4vw, 2.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.flow-step:last-child {
+  padding-bottom: 0;
+}
+
+/* El Punto de la línea de tiempo */
+.flow-step::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 0.4rem;
+  width: 7px;
+  height: 7px;
+  background: var(--paper-2);
+  border: 1px solid var(--pink);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(224, 113, 141, 0.08);
+}
+
+.flow-step__num {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--pink-55);
+  margin-bottom: 0.35rem;
+}
+
+.flow-step__title {
+  margin: 0 0 0.75rem 0;
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* =========================
+   6. RESPONSIVE Y LECTURA (Móvil)
+   ========================= */
+
+@media (max-width: 900px) {
+  .editorial-block {
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 6vw, 3.5rem);
+    padding-inline: clamp(1.25rem, 4vw, 1.5rem);
+    text-align: left; /* Mantenemos la izquierda para proteger la lectura y el timeline */
+  }
+
+  .editorial-block__head {
+    align-items: flex-start;
+  }
+}
+
+/* =========================
+   7. LAYOUT DESKTOP (Retícula Asimétrica)
+   ========================= */
+
+@media (min-width: 901px) {
+  .editorial-block {
+    grid-template-columns: 0.8fr 1.2fr;
+    column-gap: clamp(3rem, 6vw, 8rem);
+    align-items: start;
+    padding-inline: clamp(0.5rem, 1.4vw, 1.1rem);
+  }
+
+  /* Línea vertical junto al título principal */
+  .editorial-block__head {
+    padding-left: 1.5rem;
+  }
+  
+  .editorial-block__head::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    bottom: 0.2rem;
+    width: 2px;
+    background: var(--pink-35);
+  }
+}
+
+/* =========================
+   8. OUTRO: CIERRE Y ACCIÓN
+   ========================= */
+
+.band--outro {
+  background: var(--paper-2); /* Fondo blanco puro */
+  color: var(--text);
+  padding: clamp(4.5rem, 8vw, 6rem) 0;
+  border-top: 1px solid rgba(12, 12, 12, 0.03);
   overflow: clip;
 }
 
-.proposal{
-  padding: clamp(3.1rem, 6.8vw, 6.4rem) 0;
-  display: grid;
-  gap: clamp(1.25rem, 2.8vw, 2.2rem);
-  min-width: 0;
+.outro-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-inline: auto;
+  max-width: 600px;
+  gap: 2.5rem;
+  padding-inline: clamp(1rem, 3vw, 2rem);
 }
 
-/* Mobile: centered, breathable */
-@media (max-width: 767px){
-  .proposal{
-    text-align: center;
-    padding-left: clamp(1rem, 3vw, 1.25rem);
-    padding-right: clamp(1rem, 3vw, 1.25rem);
-  }
-
-  .proposal__head,
-  .proposal__body{
-    margin-inline: auto;
-    max-width: 64ch;
-  }
+.outro__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Desktop: two columns, vertically aligned, calm */
-@media (min-width: 768px){
-  .proposal{
-    grid-template-columns: 0.9fr 1.4fr;
-    column-gap: clamp(2.5rem, 4.8vw, 5.75rem);
-    align-items: center;
-
-    /* subtle internal breathing */
-    padding-left: clamp(0.5rem, 1.4vw, 1.1rem);
-    padding-right: clamp(0.5rem, 1.4vw, 1.1rem);
-    text-align: left;
-  }
-}
-
-/* Head */
-.proposal__head{
-  min-width: 0;
-}
-
-/* Quiet label (not shouty) */
-.proposal__label{
-  margin: 0 0 0.55rem 0;
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 520;
-  color: var(--text-muted-2);
-}
-
-/* Title: informative, academic, not huge */
-.proposal__title{
-  margin: 0;
-
+.outro__location {
   font-family: var(--font-ui);
-  font-weight: 480;
-  font-size: clamp(18px, 1.35vw, 24px);
-  line-height: 1.28;
-  letter-spacing: -0.004em;
-
-  color: var(--text);
-}
-
-/* Sutil decorador estructural (no border de sección) */
-@media (min-width: 768px){
-  .proposal__title{
-    display: inline-block;
-    position: relative;
-    padding: 0.9rem 1.05rem;
-  }
-
-  .proposal__title::before{
-    content:"";
-    position:absolute;
-    inset: 0;
-    border: 1px solid var(--pink);
-    opacity: 0.22;      /* más silencioso que el statement */
-    pointer-events:none;
-    border-radius: 6px;
-  }
-}
-
-/* Body */
-.proposal__body{
-  min-width: 0;
-  max-width: 78ch;
-}
-
-.proposal__p{
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-muted-2);
   margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Pequeñas líneas decorativas */
+.outro__location::before,
+.outro__location::after {
+  content: "";
+  width: 16px;
+  height: 1px;
+  background: var(--pink-35);
+}
+
+.outro__title {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.outro__description {
+  margin: 0;
+  font-family: var(--font-ui);
   font-size: var(--fs-body);
-  line-height: 1.95;
-  font-weight: 360;
   color: var(--text-muted);
+  line-height: 1.6;
+  text-wrap: balance;
 }
 
-/* Paragraph rhythm */
-.proposal__p + .proposal__p{
-  margin-top: 1.3rem;
+.outro__action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
 }
 
-/* Tiny screens refinement */
-@media (max-width: 520px){
-  .proposal{
-    padding: 2.75rem 0;
-    gap: 1.1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+/* Botón Sólido Oscuro (Destaca perfecto sobre el fondo blanco) */
+.ctaSolid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.05rem 2.2rem;
+  background: var(--ink);
+  color: var(--onink);
+  border: 1px solid var(--ink);
+  
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px; /* Un levísimo suavizado en las esquinas */
+  
+  transition: background 250ms ease, 
+              color 250ms ease, 
+              border-color 250ms ease,
+              transform 250ms ease;
+}
 
-  .proposal__p{
-    line-height: 1.9;
-  }
+.ctaSolid:hover {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.ctaSolid:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.outro__note {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--text-muted-2);
+  font-weight: 400;
+  max-width: 40ch;
+  text-wrap: balance;
 }
