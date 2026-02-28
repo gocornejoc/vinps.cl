@@ -1,23 +1,47 @@
-/* css/footer.css */
-/* =========================
-   FOOTER — paper band (no borders)
-   Separation by surface only
-   ========================= */
+/* ==========================================
+   FOOTER — Dark Minimal
+   - single element
+   - elegant
+   - institutional
+   - no borders
+   ========================================== */
 
 .band--footer{
-  background: var(--paper);
-  padding: 1.25rem 0;
+  background: var(--ink);
+  color: var(--onink);
+  overflow: clip;
 }
 
-.footerInner{
-  display:flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 1rem;
+.footer{
+  padding: clamp(2.6rem, 6vw, 4.5rem) 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
 }
 
-.footerLinks{
-  display:flex;
-  gap: 1.6rem;
-  align-items:center;
+/* Email */
+.footer__email{
+  font-family: var(--font-ui);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+
+  color: var(--onink-muted);
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+.footer__email:hover{
+  color: var(--onink);
+}
+
+.footer__email:focus-visible{
+  outline: 2px solid var(--focus);
+  outline-offset: 6px;
+  border-radius: 4px;
 }
