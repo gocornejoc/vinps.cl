@@ -1,0 +1,132 @@
+/* css/global.css */
+/* =========================
+   GLOBAL — vinps
+   tokens + base + primitives
+   ========================= */
+
+:root{
+   --paper: #E9EDF2;
+  --paper-2: #FFFFFF;
+
+  --ink: #101317;
+  --ink-2: #0A0D10;
+
+  --pink: #E0718D;
+  --pink-20: #F5B8C6;
+  --pink-35: #EE9DB0;
+  --pink-55: #E48299;
+
+  --focus: #E48299;
+
+  --text: #12161A;
+  --text-muted: #59626C;
+  --text-muted-2: #7C858E;
+
+  --onink: #F7F9FC;
+  --onink-muted: #C6CCD3;
+
+  --hairline: #D8DEE5;
+  --hairline-onink: #252C33;
+
+  /* Logo más potente */
+  --brand-vin: #192e4d;
+  --brand-ps: #365d80;
+  --brand-slogan: #59626C;
+
+  --accent-sage:  #365d80;
+
+  /* Typography */
+  --font-ui: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-brand: "Lexend Giga", ui-sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, "Times New Roman", Times, serif;
+  --font-slogan: var(--font-serif);
+
+  /* Scale */
+  --fs-meta: 10px;
+  --fs-body: clamp(16px, 1.2vw, 19px);
+  --fs-wordmark: clamp(58px, 6vw, 96px);
+
+  /* Tracking */
+  --trk-meta: 0.28em;
+  --trk-wide: 0.34em;
+
+  /* Layout */
+  --container: 1120px;
+  --gutter: min(6vw, 72px);
+}
+
+/* Soft reset */
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+
+html{
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+  margin: 0;
+  font-family: var(--font-ui);
+  color: var(--text);
+  background: #fff;
+}
+
+.page{ overflow-x: clip; }
+
+h1,h2,p{ margin: 0; }
+a{ color: inherit; }
+
+/* Container for non-full-bleed bands */
+.container{
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin-inline: auto;
+}
+
+/* Bands (optional semantic helper) */
+.band{ width: 100%; }
+
+/* Primitives */
+.meta{
+  font-size: var(--fs-meta);
+  letter-spacing: var(--trk-meta);
+  text-transform: uppercase;
+  font-weight: 650;
+  color: var(--text-muted-2);
+}
+.meta--stack{ line-height: 1.9; }
+
+.slogan{
+  font-family: var(--font-slogan);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(18px, 1.5vw, 30px);
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--brand-slogan);
+  line-height: 1.2;
+}
+
+.link{
+  font-size: var(--fs-meta);
+  letter-spacing: var(--trk-meta);
+  text-transform: uppercase;
+  font-weight: 760;
+  color: rgba(12,12,12,0.48);
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 180ms ease;
+}
+.link:hover{ color: rgba(12,12,12,0.82); }
+.link:focus-visible{
+  outline: 2px solid rgba(12,12,12,0.30);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+::selection{
+  background: rgba(12,12,12,0.88);
+  color: #fff;
+}

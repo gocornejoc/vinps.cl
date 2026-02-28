@@ -1,0 +1,258 @@
+/* ==========================================
+   STATEMENT — Academic Frame (tight)
+   - Frame hugs the title (structured, not empty)
+   - Title color slightly stronger (token-based, not black)
+   - No section borders; separation only by background
+   ========================================== */
+
+.band--statement{
+  background: var(--paper-2);
+  overflow: clip;
+}
+
+.statement{
+  padding: clamp(2.9rem, 6.5vw, 6rem) 0;
+  display: grid;
+  gap: clamp(1.25rem, 2.6vw, 2rem);
+  min-width: 0;
+}
+
+/* Desktop: two columns + vertical alignment + breathing */
+@media (min-width: 768px){
+  .statement{
+    grid-template-columns: 0.9fr 1.4fr;
+    column-gap: clamp(2.5rem, 4.8vw, 5.75rem);
+    align-items: center;
+
+    padding-left: clamp(0.5rem, 1.4vw, 1.1rem);
+    padding-right: clamp(0.5rem, 1.4vw, 1.1rem);
+  }
+}
+
+/* Mobile: centered + breathing */
+@media (max-width: 767px){
+  .statement{
+    text-align: center;
+    padding-left: clamp(1rem, 3vw, 1.25rem);
+    padding-right: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .statement__head,
+  .statement__body{
+    margin-inline: auto;
+    max-width: 62ch;
+  }
+}
+
+/* =========================
+   Head: tight frame that fits content
+   ========================= */
+
+.statement__head{
+  min-width: 0;
+}
+
+/* The framed title block (hug content) */
+.statement__title{
+  display: inline-block; /* ✅ frame hugs the title */
+  position: relative;
+
+  padding: 0.95rem 1.05rem;
+  margin: 0;
+
+  font-family: var(--font-slogan); /* same family as slogan */
+  font-style: normal;              /* not italic */
+  font-weight: 400;
+
+  font-size: clamp(18px, 1.35vw, 24px);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+
+  /* ✅ slightly more visible than brand-slogan, not black */
+  color: var(--text-muted);
+}
+
+/* Fine pink frame */
+.statement__title::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  border: 1px solid var(--pink);
+  opacity: 0.45;
+  pointer-events:none;
+  border-radius: 0px; /* subtle refinement, not “cardy” */
+}
+
+/* Add a small internal structure: micro-notch */
+.statement__title::after{
+  content:"";
+  position:absolute;
+  left: 0.7rem;
+  top: -1px;
+  width: 28px;
+  height: 1px;
+  background: var(--paper-2); /* creates a tiny “break” in the frame */
+  pointer-events:none;
+  opacity: 1;
+}
+
+/* Mobile: keep it tight and centered */
+@media (max-width: 520px){
+  .statement__title{
+    padding: 0.9rem 0.95rem;
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   Body
+   ========================= */
+
+.statement__body{
+  max-width: 78ch;
+  min-width: 0;
+}
+
+.statement__lead{
+  font-size: var(--fs-body);
+  line-height: 1.95;
+  font-weight: 360;
+  color: var(--text-muted);
+}
+
+.statement__close{
+  margin-top: 1.25rem;
+  font-size: var(--fs-body);
+  line-height: 1.85;
+  font-weight: 430;
+  color: var(--text);
+}
+
+
+/* ==========================================
+   PROPUESTA SECTION
+   
+   PROPOSAL — band (paper surface)
+   Separation by background only (no borders)
+   ========================================== */
+
+.band--proposal{
+  background: var(--paper);
+  overflow: clip;
+}
+
+.proposal{
+  padding: clamp(3.1rem, 6.8vw, 6.4rem) 0;
+  display: grid;
+  gap: clamp(1.25rem, 2.8vw, 2.2rem);
+  min-width: 0;
+}
+
+/* Mobile: centered, breathable */
+@media (max-width: 767px){
+  .proposal{
+    text-align: center;
+    padding-left: clamp(1rem, 3vw, 1.25rem);
+    padding-right: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .proposal__head,
+  .proposal__body{
+    margin-inline: auto;
+    max-width: 64ch;
+  }
+}
+
+/* Desktop: two columns, vertically aligned, calm */
+@media (min-width: 768px){
+  .proposal{
+    grid-template-columns: 0.9fr 1.4fr;
+    column-gap: clamp(2.5rem, 4.8vw, 5.75rem);
+    align-items: center;
+
+    /* subtle internal breathing */
+    padding-left: clamp(0.5rem, 1.4vw, 1.1rem);
+    padding-right: clamp(0.5rem, 1.4vw, 1.1rem);
+    text-align: left;
+  }
+}
+
+/* Head */
+.proposal__head{
+  min-width: 0;
+}
+
+/* Quiet label (not shouty) */
+.proposal__label{
+  margin: 0 0 0.55rem 0;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 520;
+  color: var(--text-muted-2);
+}
+
+/* Title: informative, academic, not huge */
+.proposal__title{
+  margin: 0;
+
+  font-family: var(--font-ui);
+  font-weight: 480;
+  font-size: clamp(18px, 1.35vw, 24px);
+  line-height: 1.28;
+  letter-spacing: -0.004em;
+
+  color: var(--text);
+}
+
+/* Sutil decorador estructural (no border de sección) */
+@media (min-width: 768px){
+  .proposal__title{
+    display: inline-block;
+    position: relative;
+    padding: 0.9rem 1.05rem;
+  }
+
+  .proposal__title::before{
+    content:"";
+    position:absolute;
+    inset: 0;
+    border: 1px solid var(--pink);
+    opacity: 0.22;      /* más silencioso que el statement */
+    pointer-events:none;
+    border-radius: 6px;
+  }
+}
+
+/* Body */
+.proposal__body{
+  min-width: 0;
+  max-width: 78ch;
+}
+
+.proposal__p{
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: 1.95;
+  font-weight: 360;
+  color: var(--text-muted);
+}
+
+/* Paragraph rhythm */
+.proposal__p + .proposal__p{
+  margin-top: 1.3rem;
+}
+
+/* Tiny screens refinement */
+@media (max-width: 520px){
+  .proposal{
+    padding: 2.75rem 0;
+    gap: 1.1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .proposal__p{
+    line-height: 1.9;
+  }
+}

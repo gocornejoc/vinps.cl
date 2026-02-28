@@ -1,0 +1,129 @@
+/* css/nav.css */
+/* =========================
+   NAV — vinps (White Masthead)
+   Breathing + fluid gutters on all sizes
+   ========================= */
+
+.band--nav{
+  position: relative;
+  z-index: 10;
+
+  background: #fff;
+  color: var(--text);
+
+  border-bottom: 1px solid rgba(12,12,12,0.10);
+  overflow: clip;
+}
+
+.band--nav::after{
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--pink-35);
+  pointer-events:none;
+}
+
+.band--nav::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: rgba(12,12,12,0.06);
+  pointer-events:none;
+}
+
+/* Inner layout */
+.navInner{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.75rem;
+
+  /* ✅ vertical rhythm */
+  padding-block: 1.05rem;
+
+  /* ✅ horizontal breathing INSIDE container */
+  padding-inline: clamp(0.25rem, 1.1vw, 0.85rem);
+
+  min-width: 0;
+}
+
+/* Left */
+.band--nav .meta:first-child{
+  font-size: 12px;
+  font-weight: 520;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: rgba(12,12,12,0.74);
+
+  min-width: 0;
+  max-width: 82ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Right */
+.band--nav .meta:last-child{
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(12,12,12,0.62);
+
+  display:flex;
+  align-items:center;
+  gap: 0.55rem;
+
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+.band--nav .meta:last-child::before{
+  content:"";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--pink);
+  box-shadow: 0 0 0 3px rgba(240,134,156,0.16);
+  opacity: 0.95;
+}
+
+@media (min-width: 768px){
+  .band--nav .meta:last-child{
+    padding-left: 1.15rem;
+    border-left: 1px solid rgba(12,12,12,0.10);
+  }
+}
+
+/* Mobile: stack + keep air */
+@media (max-width: 520px){
+  .navInner{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+
+    padding-block: 0.95rem;
+    padding-inline: 0.65rem; /* ✅ extra breathing on tiny screens */
+  }
+
+  .band--nav .meta:first-child{
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: none;
+    line-height: 1.35;
+  }
+
+  .band--nav .meta:last-child{
+    padding-left: 0;
+    border-left: 0;
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
+  }
+}

@@ -1,0 +1,170 @@
+/* ==========================================
+   HERO — Diptych Minimal / Institutional
+   Separation by surface only (no borders)
+   ========================================== */
+
+.band--hero{
+  background: var(--paper);
+}
+
+/* Full-bleed frame */
+.heroFrame{
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Panels */
+.heroPanel{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: clamp(2.8rem, 6vw, 5.5rem) 0;
+}
+
+.heroPanel--left{
+  background: var(--paper);
+}
+
+.heroPanel--right{
+  background: var(--ink);
+  color: var(--onink);
+}
+
+/* ==========================================
+   LEFT — Brand Block
+   ========================================== */
+
+.brandCenter{
+  width: fit-content;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 1rem;
+  padding-inline: clamp(1rem, 3vw, 2.4rem);
+}
+
+.wordmark{
+  font-family: var(--font-brand);
+  font-weight: 600;
+  font-size: var(--fs-wordmark);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+.wordmark__vin{ color: var(--brand-vin); }
+.wordmark__ps{
+  color: var(--brand-ps);
+  margin-left: -0.05em;
+}
+
+/* Divider inside hero only (not structural border) */
+.brandDivider{
+  width: min(220px, 80%);
+  height: 1px;
+  background: var(--hairline);
+  opacity: 0.6;
+}
+
+/* ==========================================
+   RIGHT — Callout
+   ========================================== */
+
+.calloutWrap{
+  width: min(640px, 100%);
+  padding-inline: clamp(1rem, 3vw, 2.6rem);
+  text-align: center;
+  margin-inline: auto;
+}
+
+.calloutTitle{
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+
+  font-size: clamp(40px, 4.2vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+
+  color: var(--onink);
+  margin-bottom: 1.9rem;
+
+  max-width: 18ch;
+  margin-inline: auto;
+  text-wrap: balance;
+}
+
+.calloutAccent{
+  font-style: normal;
+  font-weight: 500;
+  color: var(--accent-sage);
+}
+
+.calloutCopy{
+  font-size: var(--fs-body);
+  line-height: 1.9;
+  font-weight: 350;
+
+  color: var(--onink-muted);
+
+  max-width: 60ch;
+  margin-inline: auto;
+  margin-bottom: 2.2rem;
+}
+
+.ctaDark{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding: 0.95rem 1.6rem;
+
+  background: transparent;
+  border: 1px solid var(--onink-muted);
+  color: var(--onink);
+
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  transition: background 200ms ease,
+              color 200ms ease,
+              border-color 200ms ease;
+}
+
+.ctaDark:hover{
+  background: var(--onink);
+  color: var(--ink);
+  border-color: var(--onink);
+}
+
+.ctaDark:focus-visible{
+  outline: 2px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* ==========================================
+   Responsive Switch (Diptych)
+   ========================================== */
+
+@media (min-width: 768px){
+
+  .calloutWrap{
+    text-align: left;
+    margin-inline: 0;
+  }
+
+  .calloutTitle{
+    max-width: none;
+    margin-inline: 0;
+    line-height: 0.95;
+  }
+
+  .calloutCopy{
+    margin-inline: 0;
+  }
+}

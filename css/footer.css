@@ -1,0 +1,23 @@
+/* css/footer.css */
+/* =========================
+   FOOTER — paper band (no borders)
+   Separation by surface only
+   ========================= */
+
+.band--footer{
+  background: var(--paper);
+  padding: 1.25rem 0;
+}
+
+.footerInner{
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.footerLinks{
+  display:flex;
+  gap: 1.6rem;
+  align-items:center;
+}

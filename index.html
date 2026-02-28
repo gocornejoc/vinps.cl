@@ -1,0 +1,147 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>vinps | Vínculo y psicología</title>
+
+  <!-- Tailwind (layout/responsive/spacing) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Fonts: brand only required (Lexend Giga 600) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/section.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+
+<body class="page">
+  <main class="min-h-screen flex flex-col" aria-label="vinps landing">
+
+    <!-- NAV band (dark / translucent) 
+    <header class="band band--nav" aria-label="Navegación editorial">
+      <div class="container">
+        <div class="navInner">
+          <p class="meta">vinps | Iniciativa para fortalecer el vínculo terapéutico</p>
+          <p class="meta">Etapa piloto / 2026</p>
+        </div>
+      </div>
+    </header>
+    -->
+    <!-- HERO band (diptych) -->
+    <section class="band band--hero flex-1" aria-label="Hero">
+  <div class="heroFrame grid grid-cols-1 md:grid-cols-2">
+    <!-- Left panel (paper) -->
+    <section class="heroPanel heroPanel--left">
+      <div class="brandCenter">
+        <h1 class="wordmark" aria-label="vinps">
+          <span class="wordmark__vin">vin</span><span class="wordmark__ps">ps</span>
+        </h1>
+
+        <div class="brandDivider" aria-hidden="true"></div>
+
+        <p class="slogan">Vínculo y psicología</p>
+      </div>
+    </section>
+
+    <!-- Right panel (ink) -->
+    <section class="heroPanel heroPanel--right" aria-label="Convocatoria">
+      <div class="calloutWrap">
+        <h2 class="calloutTitle">
+          Cuidar el <br>
+          <span class="calloutAccent">vínculo</span> desde <br>
+          el inicio.
+        </h2>
+
+        <p class="calloutCopy">
+          Invitamos a psicólogos y psicólogas con práctica activa a participar en una etapa piloto sin costo ni compromiso, en la que se facilitará el contacto con consultantes reales, favoreciendo una mayor afinidad en el primer encuentro.
+        </p>
+
+        <a class="ctaDark" href="#apply">Postular ahora</a>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<!-- STATEMENT band (intro) -->
+<section class="band band--statement" aria-label="Introducción">
+  <div class="container">
+    <article class="statement" aria-labelledby="statement-title">
+
+      <header class="statement__head">
+        <h2 class="statement__title" id="statement-title">
+          El valor de un buen comienzo
+        </h2>
+      </header>
+
+      <div class="statement__body">
+        <p class="statement__lead">
+          En la práctica clínica, el inicio del proceso terapéutico tiene un peso particular. La sintonía inicial entre profesional y consultante puede influir en el encuadre y en la continuidad del trabajo.
+        </p>
+
+        <p class="statement__close">
+          Buscamos cuidar ese primer contacto, facilitando conexiones más afinadas desde el comienzo.
+        </p>
+      </div>
+
+    </article>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="band band--proposal" aria-label="Propuesta">
+  <div class="container">
+    <article class="proposal" aria-labelledby="proposal-title">
+      <header class="proposal__head">
+        <h2 class="proposal__title" id="proposal-title">Propuesta</h2>
+      </header>
+
+      <div class="proposal__body">
+        <p class="proposal__p">
+          La iniciativa busca facilitar el contacto entre profesionales y personas interesadas en iniciar acompañamiento psicológico. Durante esta etapa piloto, se derivarán casos con afinidad previa al perfil de cada especialista, entregando una síntesis básica de antecedentes y necesidades.
+        </p>
+
+        <p class="proposal__p">
+          Una vez realizada la conexión inicial, el proceso queda íntegramente bajo la gestión del profesional. La participación es limitada y contempla un seguimiento posterior para recoger retroalimentación y evaluar futuras etapas del proyecto.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+
+
+
+    <!-- FOOTER band -->
+    <footer class="band band--footer" aria-label="Footer">
+      <div class="container">
+        <div class="footerInner">
+          <p class="meta meta--stack">
+            Investigación &amp; Desarrollo<br>
+            Chile
+          </p>
+
+          <nav class="footerLinks" aria-label="Enlaces">
+            <a class="link" href="#">Instagram</a>
+            <a class="link" href="#">LinkedIn</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
